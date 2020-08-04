@@ -59,29 +59,78 @@ class _MyHomePageState extends State<MyHomePage> {
 class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child:Container(
-          padding: EdgeInsets.only(top:20.0),
-          margin: EdgeInsets.only(top:150),
-          color:Colors.red,
-          height:MediaQuery.of(context).size.height*0.4,
-          width:MediaQuery.of(context).size.width,
-          child: TextField(
-            textAlign: TextAlign.right,
-
-            style: TextStyle(
-              fontSize: 55,
-            ),
-            decoration: InputDecoration(
-              border:OutlineInputBorder(
-                borderSide:BorderSide(
-                  color: Colors.red,
-                )
+    return Column(
+      children: <Widget>[
+      Align(
+            alignment: Alignment.topLeft,    //alignment for the container
+            child:Container(
+  //          padding: EdgeInsets.only(top:20.0),
+  //          margin: EdgeInsets.only(top:150),
+  //            color:Colors.red,
+            height:MediaQuery.of(context).size.height*0.35,
+            width:MediaQuery.of(context).size.width,
+              child:Align(                  //alignment for the textfield in container
+                alignment: Alignment.bottomLeft,
+                child: TextField(
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 55,
+                      backgroundColor:Colors.black,
+                      ),
+                    decoration: InputDecoration(
+                      border:OutlineInputBorder(
+                        borderSide:BorderSide(
+                        )
+                      ),
+                  ),
+          )
               ),
 
-            ),
-          ),
+          )
+      ),
+        Container(
+          child:GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(20),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 2,
+            
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text("He'd have you all unravel at the"),
+                color: Colors.teal[100],
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text('Heed not the rabble'),
+                color: Colors.teal[200],
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text('Sound of screams but the'),
+                color: Colors.teal[300],
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text('Who scream'),
+                color: Colors.teal[400],
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text('Revolution is coming...'),
+                color: Colors.teal[500],
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text('Revolution, they...'),
+                color: Colors.teal[600],
+              ),
+            ],
+          )
         )
+      ]
     );
   }
 }
